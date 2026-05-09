@@ -90,6 +90,9 @@ export default function Page() {
   const [uploadError, setUploadError] = useState("");
   const [uploadSuccess, setUploadSuccess] = useState("");
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [expandedNodeIds, setExpandedNodeIds] = useState<Set<string>>(
+    new Set()
+  );
 
   const messageRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -530,6 +533,10 @@ export default function Page() {
   }, [selectedDataset]);
 
   useEffect(() => {
+    setExpandedNodeIds(new Set());
+  }, [selectedDataset]);
+
+  useEffect(() => {
     if (usableTimeBuckets.length === 0) {
       setSliderLow(0);
       setSliderHigh(1);
@@ -697,6 +704,8 @@ export default function Page() {
                   edgesData={edgesData}
                   onOpenMessage={openMessage}
                   onOpenTopic={openTopic}
+                  expandedNodeIds={expandedNodeIds}
+                  onExpandedNodeIdsChange={setExpandedNodeIds}
                 />
               </div>
             </div>
@@ -716,6 +725,8 @@ export default function Page() {
                 edgesData={edgesData}
                 onOpenMessage={openMessage}
                 onOpenTopic={openTopic}
+                expandedNodeIds={expandedNodeIds}
+                onExpandedNodeIdsChange={setExpandedNodeIds}
               />
             </div>
           ) : (

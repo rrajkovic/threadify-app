@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Background,
   Controls,
@@ -75,6 +75,8 @@ type Props = {
   edgesData: Edge[];
   onOpenMessage: (msg: Message) => void;
   onOpenTopic: (topic: BaseGraphNode) => void;
+  expandedNodeIds?: Set<string>;
+  onExpandedNodeIdsChange?: (next: Set<string>) => void;
 };
 
 function NodeChevronButton({ expanded, onToggle }: NodeChevronButtonProps) {
@@ -340,11 +342,28 @@ export default function UserThreadMapView({
   edgesData,
   onOpenMessage,
   onOpenTopic,
+  expandedNodeIds,
+  onExpandedNodeIdsChange,
 }: Props) {
-  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
+  const [internalExpandedIds, setInternalExpandedIds] = useState<Set<string>>(new Set());
   const [layoutedVisibleNodes, setLayoutedVisibleNodes] = useState<BaseGraphNode[]>([]);
   const flowInstanceRef = useRef<ReactFlowInstance<GraphCardNodeType, Edge> | null>(null);
   const fitAfterToggleRef = useRef(false);
+  const expandedIds = expandedNodeIds ?? internalExpandedIds;
+
+  const updateExpandedIds = useCallback(
+    (next: Set<string> | ((current: Set<string>) => Set<string>)) => {
+      if (onExpandedNodeIdsChange) {
+        onExpandedNodeIdsChange(
+          typeof next === "function" ? next(expandedIds) : next
+        );
+        return;
+      }
+
+      setInternalExpandedIds(next);
+    },
+    [expandedIds, onExpandedNodeIdsChange]
+  );
   
   const expandableNodeIds = useMemo(
     () => nodesData.filter((node) => node.hasChildren).map((node) => node.id),
@@ -359,19 +378,19 @@ export default function UserThreadMapView({
     if (expandableNodeIds.length === 0) return;
 
     fitAfterToggleRef.current = true;
-    setExpandedIds(
+    updateExpandedIds(
       allExpandableNodesExpanded ? new Set() : new Set(expandableNodeIds)
     );
   }
 
-  const toggleNode = (id: string) => {
-    setExpandedIds((prev) => {
+  const toggleNode = useCallback((id: string) => {
+    updateExpandedIds((prev) => {
       const next = new Set(prev);
       if (next.has(id)) next.delete(id);
       else next.add(id);
       return next;
     });
-  };
+  }, [updateExpandedIds]);
 
   const nodeById = useMemo(() => {
     const map = new Map<string, BaseGraphNode>();
@@ -505,7 +524,14 @@ export default function UserThreadMapView({
           onOpenTopic: () => onOpenTopic(node),
         },
       })),
-    [layoutedVisibleNodes, expandedIds, highlightNodeIds, onOpenMessage, onOpenTopic]
+    [
+      layoutedVisibleNodes,
+      expandedIds,
+      highlightNodeIds,
+      onOpenMessage,
+      onOpenTopic,
+      toggleNode,
+    ]
   );
 
   const edges = visibleEdges;

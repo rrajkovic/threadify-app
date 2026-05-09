@@ -1,0 +1,992 @@
+[
+  {
+    "id": "long-001",
+    "author": "Maya",
+    "timestamp": "2026-04-23T08:30:00Z",
+    "text": "Let's use this thread for the final product rehearsal. We need a realistic conversation that shows upload, filtering, graph expansion, fullscreen, and summaries.",
+    "parentId": null,
+    "topic": "demo planning",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-002",
+    "author": "Owen",
+    "timestamp": "2026-04-23T08:36:00Z",
+    "text": "I can start with the problem statement: long discussion threads are hard to scan when everything is linear.",
+    "parentId": "long-001",
+    "topic": "presentation",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-003",
+    "author": "Priya",
+    "timestamp": "2026-04-23T08:42:00Z",
+    "text": "Then we can upload the JSON and show that the dataset selector updates without leaving the page.",
+    "parentId": "long-002",
+    "topic": "data upload",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-004",
+    "author": "Caleb",
+    "timestamp": "2026-04-23T08:48:00Z",
+    "text": "The live upload is a strong moment. It proves the app is not only displaying hardcoded demo data.",
+    "parentId": "long-003",
+    "topic": "data upload",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-005",
+    "author": "Zoe",
+    "timestamp": "2026-04-23T08:55:00Z",
+    "text": "Let's make sure the uploaded file has a few different topics so the chips are useful right away.",
+    "parentId": "long-004",
+    "topic": "data upload",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-006",
+    "author": "Nikhil",
+    "timestamp": "2026-04-23T09:02:00Z",
+    "text": "I would also include some balanced sentiment labels. A totally positive thread makes the footer less interesting.",
+    "parentId": "long-005",
+    "topic": "sentiment",
+    "sentiment": "mixed"
+  },
+  {
+    "id": "long-007",
+    "author": "Sofia",
+    "timestamp": "2026-04-23T09:09:00Z",
+    "text": "Agreed. We can include a few concerns about timing, graph density, and network reliability.",
+    "parentId": "long-006",
+    "topic": "sentiment",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-008",
+    "author": "Eli",
+    "timestamp": "2026-04-23T09:16:00Z",
+    "text": "Those concerns are realistic and still keep the thread collaborative.",
+    "parentId": "long-007",
+    "topic": "sentiment",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-009",
+    "author": "Harper",
+    "timestamp": "2026-04-23T09:24:00Z",
+    "text": "For the graph section, I want to show the roots first, then expand all nodes to reveal the conversation structure.",
+    "parentId": "long-001",
+    "topic": "thread map",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-010",
+    "author": "Maya",
+    "timestamp": "2026-04-23T09:31:00Z",
+    "text": "Good. After that, collapse all nodes and open only one branch so people can see how exploration works.",
+    "parentId": "long-009",
+    "topic": "thread map",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-011",
+    "author": "Owen",
+    "timestamp": "2026-04-23T09:38:00Z",
+    "text": "Fullscreen should come after we expand the graph. It will make the layout easier to see from the back of the room.",
+    "parentId": "long-010",
+    "topic": "fullscreen",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-012",
+    "author": "Priya",
+    "timestamp": "2026-04-23T09:45:00Z",
+    "text": "And we should mention that fullscreen keeps the topic and time controls available.",
+    "parentId": "long-011",
+    "topic": "fullscreen",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-013",
+    "author": "Caleb",
+    "timestamp": "2026-04-23T09:52:00Z",
+    "text": "That is useful because we can filter while still keeping the graph large.",
+    "parentId": "long-012",
+    "topic": "fullscreen",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-014",
+    "author": "Zoe",
+    "timestamp": "2026-04-23T10:00:00Z",
+    "text": "The fullscreen button should not reset which nodes are open. That would be confusing during a live demo.",
+    "parentId": "long-013",
+    "topic": "fullscreen",
+    "sentiment": "critical"
+  },
+  {
+    "id": "long-015",
+    "author": "Nikhil",
+    "timestamp": "2026-04-23T10:07:00Z",
+    "text": "Right, it should feel like resizing the same view, not starting over.",
+    "parentId": "long-014",
+    "topic": "fullscreen",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-016",
+    "author": "Sofia",
+    "timestamp": "2026-04-23T10:14:00Z",
+    "text": "I checked that behavior after the latest change. Expanded branches stay open when entering fullscreen.",
+    "parentId": "long-015",
+    "topic": "fullscreen",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-017",
+    "author": "Eli",
+    "timestamp": "2026-04-23T10:22:00Z",
+    "text": "Great. That will make the graph demo feel much smoother.",
+    "parentId": "long-016",
+    "topic": "fullscreen",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-018",
+    "author": "Harper",
+    "timestamp": "2026-04-23T10:35:00Z",
+    "text": "Can we make the time filter part of the demo? It shows that the app is more than just a static diagram.",
+    "parentId": null,
+    "topic": "time filtering",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-019",
+    "author": "Maya",
+    "timestamp": "2026-04-23T10:42:00Z",
+    "text": "Yes. We can narrow the range to one or two days and show the graph update.",
+    "parentId": "long-018",
+    "topic": "time filtering",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-020",
+    "author": "Owen",
+    "timestamp": "2026-04-23T10:49:00Z",
+    "text": "The topic chips should also change when the selected time range changes.",
+    "parentId": "long-019",
+    "topic": "time filtering",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-021",
+    "author": "Priya",
+    "timestamp": "2026-04-23T10:56:00Z",
+    "text": "That is a nice detail, but we should not linger too long unless someone asks.",
+    "parentId": "long-020",
+    "topic": "presentation",
+    "sentiment": "mixed"
+  },
+  {
+    "id": "long-022",
+    "author": "Caleb",
+    "timestamp": "2026-04-23T11:03:00Z",
+    "text": "Agreed. The main story is still upload, map, filter, summary.",
+    "parentId": "long-021",
+    "topic": "presentation",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-023",
+    "author": "Zoe",
+    "timestamp": "2026-04-23T11:12:00Z",
+    "text": "The time filter is useful as a quick proof that the graph is dynamic.",
+    "parentId": "long-022",
+    "topic": "time filtering",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-024",
+    "author": "Nikhil",
+    "timestamp": "2026-04-23T11:19:00Z",
+    "text": "Let's use week view during the demo because the labels are easier to read.",
+    "parentId": "long-023",
+    "topic": "time filtering",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-025",
+    "author": "Sofia",
+    "timestamp": "2026-04-23T11:28:00Z",
+    "text": "I want to make sure the chat view still has a place in the walkthrough.",
+    "parentId": null,
+    "topic": "chat view",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-026",
+    "author": "Eli",
+    "timestamp": "2026-04-23T11:35:00Z",
+    "text": "Maybe use chat view after selecting a topic. It lets people read the actual conversation behind the graph.",
+    "parentId": "long-025",
+    "topic": "chat view",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-027",
+    "author": "Harper",
+    "timestamp": "2026-04-23T11:42:00Z",
+    "text": "The reply preview in chat view is helpful. It shows context without opening every message.",
+    "parentId": "long-026",
+    "topic": "chat view",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-028",
+    "author": "Maya",
+    "timestamp": "2026-04-23T11:49:00Z",
+    "text": "We should open one message detail sheet from the map and one from chat view if time allows.",
+    "parentId": "long-027",
+    "topic": "chat view",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-029",
+    "author": "Owen",
+    "timestamp": "2026-04-23T11:56:00Z",
+    "text": "That might be too much for the main demo, but it is good backup material for questions.",
+    "parentId": "long-028",
+    "topic": "presentation",
+    "sentiment": "mixed"
+  },
+  {
+    "id": "long-030",
+    "author": "Priya",
+    "timestamp": "2026-04-23T12:05:00Z",
+    "text": "Let's keep it in the script as optional, then decide based on time.",
+    "parentId": "long-029",
+    "topic": "presentation",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-031",
+    "author": "Caleb",
+    "timestamp": "2026-04-24T09:00:00Z",
+    "text": "I ran the longer upload file locally. The dataset loaded and the message count matched.",
+    "parentId": null,
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-032",
+    "author": "Zoe",
+    "timestamp": "2026-04-24T09:07:00Z",
+    "text": "Did the graph stay responsive after expanding all branches?",
+    "parentId": "long-031",
+    "topic": "quality assurance",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-033",
+    "author": "Caleb",
+    "timestamp": "2026-04-24T09:14:00Z",
+    "text": "Yes. It was dense, but the fit-to-view behavior made it manageable.",
+    "parentId": "long-032",
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-034",
+    "author": "Nikhil",
+    "timestamp": "2026-04-24T09:21:00Z",
+    "text": "We should avoid expanding everything on the phone. The screen is too small for that to be useful.",
+    "parentId": "long-033",
+    "topic": "mobile testing",
+    "sentiment": "critical"
+  },
+  {
+    "id": "long-035",
+    "author": "Sofia",
+    "timestamp": "2026-04-24T09:28:00Z",
+    "text": "True. On phone, it is better to use topic filters and open one branch at a time.",
+    "parentId": "long-034",
+    "topic": "mobile testing",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-036",
+    "author": "Eli",
+    "timestamp": "2026-04-24T09:35:00Z",
+    "text": "For the actual showcase, the projector should be the main view. The phone is more of a quick compatibility check.",
+    "parentId": "long-035",
+    "topic": "mobile testing",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-037",
+    "author": "Harper",
+    "timestamp": "2026-04-24T09:42:00Z",
+    "text": "The backend also needs to be warmed up before we test from another device.",
+    "parentId": "long-036",
+    "topic": "mobile testing",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-038",
+    "author": "Maya",
+    "timestamp": "2026-04-24T09:49:00Z",
+    "text": "Let's load the selected dataset once on the laptop before connecting the phone.",
+    "parentId": "long-037",
+    "topic": "mobile testing",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-039",
+    "author": "Owen",
+    "timestamp": "2026-04-24T09:56:00Z",
+    "text": "I will also check the API route directly from the phone browser if the page looks empty.",
+    "parentId": "long-038",
+    "topic": "mobile testing",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-040",
+    "author": "Priya",
+    "timestamp": "2026-04-24T10:05:00Z",
+    "text": "Good plan. If the API route returns datasets, then the frontend path is fine.",
+    "parentId": "long-039",
+    "topic": "mobile testing",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-041",
+    "author": "Caleb",
+    "timestamp": "2026-04-24T10:14:00Z",
+    "text": "What should we say about AI summaries if the API key is not available during the showcase?",
+    "parentId": null,
+    "topic": "ai summaries",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-042",
+    "author": "Zoe",
+    "timestamp": "2026-04-24T10:21:00Z",
+    "text": "We can say the app uses cached or fallback summaries when live AI is not configured.",
+    "parentId": "long-041",
+    "topic": "ai summaries",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-043",
+    "author": "Nikhil",
+    "timestamp": "2026-04-24T10:28:00Z",
+    "text": "The important part is that summary cards are tied to thread roots.",
+    "parentId": "long-042",
+    "topic": "ai summaries",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-044",
+    "author": "Sofia",
+    "timestamp": "2026-04-24T10:35:00Z",
+    "text": "Exactly. They help explain what each branch is about before expanding it.",
+    "parentId": "long-043",
+    "topic": "ai summaries",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-045",
+    "author": "Eli",
+    "timestamp": "2026-04-24T10:42:00Z",
+    "text": "One limitation is that summaries can take time to generate on first load.",
+    "parentId": "long-044",
+    "topic": "ai summaries",
+    "sentiment": "mixed"
+  },
+  {
+    "id": "long-046",
+    "author": "Harper",
+    "timestamp": "2026-04-24T10:49:00Z",
+    "text": "We can frame that as a normal tradeoff for AI-enriched analysis.",
+    "parentId": "long-045",
+    "topic": "ai summaries",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-047",
+    "author": "Maya",
+    "timestamp": "2026-04-24T10:56:00Z",
+    "text": "Let's pre-load the dataset so the showcase focuses on the user experience, not waiting.",
+    "parentId": "long-046",
+    "topic": "ai summaries",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-048",
+    "author": "Owen",
+    "timestamp": "2026-04-24T11:04:00Z",
+    "text": "I can handle that setup before we present.",
+    "parentId": "long-047",
+    "topic": "ai summaries",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-049",
+    "author": "Priya",
+    "timestamp": "2026-04-24T11:15:00Z",
+    "text": "Let's rehearse with the long file once so we know where the most interesting branches are.",
+    "parentId": null,
+    "topic": "rehearsal",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-050",
+    "author": "Caleb",
+    "timestamp": "2026-04-24T11:22:00Z",
+    "text": "I suggest using the fullscreen branch because it shows a concern and then the fix.",
+    "parentId": "long-049",
+    "topic": "rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-051",
+    "author": "Zoe",
+    "timestamp": "2026-04-24T11:29:00Z",
+    "text": "The mobile testing branch is also useful if someone asks about joining from a phone.",
+    "parentId": "long-049",
+    "topic": "rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-052",
+    "author": "Nikhil",
+    "timestamp": "2026-04-24T11:36:00Z",
+    "text": "Maybe keep that as a backup answer instead of part of the main demo.",
+    "parentId": "long-051",
+    "topic": "rehearsal",
+    "sentiment": "mixed"
+  },
+  {
+    "id": "long-053",
+    "author": "Sofia",
+    "timestamp": "2026-04-24T11:43:00Z",
+    "text": "Good idea. The main path should be polished and short.",
+    "parentId": "long-052",
+    "topic": "rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-054",
+    "author": "Eli",
+    "timestamp": "2026-04-24T11:50:00Z",
+    "text": "We can mention the rest during questions if people want more detail.",
+    "parentId": "long-053",
+    "topic": "rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-055",
+    "author": "Harper",
+    "timestamp": "2026-04-24T11:57:00Z",
+    "text": "I will mark the branches we want to open during rehearsal.",
+    "parentId": "long-054",
+    "topic": "rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-056",
+    "author": "Maya",
+    "timestamp": "2026-04-24T12:04:00Z",
+    "text": "Let's time the full walkthrough after lunch.",
+    "parentId": "long-055",
+    "topic": "rehearsal",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-057",
+    "author": "Owen",
+    "timestamp": "2026-04-24T12:12:00Z",
+    "text": "I can keep notes on any points where the demo feels slow.",
+    "parentId": "long-056",
+    "topic": "rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-058",
+    "author": "Priya",
+    "timestamp": "2026-04-24T12:20:00Z",
+    "text": "Perfect. If a section drags, we can trim the narration rather than remove the feature.",
+    "parentId": "long-057",
+    "topic": "rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-059",
+    "author": "Caleb",
+    "timestamp": "2026-04-25T09:00:00Z",
+    "text": "I want to confirm the data model we are showing: id, author, timestamp, text, parentId, topic, and sentiment.",
+    "parentId": null,
+    "topic": "data model",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-060",
+    "author": "Zoe",
+    "timestamp": "2026-04-25T09:07:00Z",
+    "text": "That is enough for the frontend to build threads and show filters immediately.",
+    "parentId": "long-059",
+    "topic": "data model",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-061",
+    "author": "Nikhil",
+    "timestamp": "2026-04-25T09:14:00Z",
+    "text": "We should not add unusual cases to this showcase file. It is meant to demonstrate the happy path.",
+    "parentId": "long-060",
+    "topic": "data model",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-062",
+    "author": "Sofia",
+    "timestamp": "2026-04-25T09:21:00Z",
+    "text": "Right. Save validation edge cases for testing, not presentation.",
+    "parentId": "long-061",
+    "topic": "data model",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-063",
+    "author": "Eli",
+    "timestamp": "2026-04-25T09:28:00Z",
+    "text": "The parent ids should form a few deep branches and a few broad branches.",
+    "parentId": "long-062",
+    "topic": "data model",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-064",
+    "author": "Harper",
+    "timestamp": "2026-04-25T09:35:00Z",
+    "text": "That makes the map look more realistic than a single straight chain.",
+    "parentId": "long-063",
+    "topic": "data model",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-065",
+    "author": "Maya",
+    "timestamp": "2026-04-25T09:42:00Z",
+    "text": "The longer file should feel like a real team conversation, not generated filler.",
+    "parentId": "long-064",
+    "topic": "data model",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-066",
+    "author": "Owen",
+    "timestamp": "2026-04-25T09:50:00Z",
+    "text": "We can vary authors and keep the message tone natural.",
+    "parentId": "long-065",
+    "topic": "data model",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-067",
+    "author": "Priya",
+    "timestamp": "2026-04-25T10:00:00Z",
+    "text": "One practical concern: the longer upload may take a little longer to summarize.",
+    "parentId": null,
+    "topic": "performance",
+    "sentiment": "mixed"
+  },
+  {
+    "id": "long-068",
+    "author": "Caleb",
+    "timestamp": "2026-04-25T10:07:00Z",
+    "text": "That is fine if we warm it up before the showcase.",
+    "parentId": "long-067",
+    "topic": "performance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-069",
+    "author": "Zoe",
+    "timestamp": "2026-04-25T10:14:00Z",
+    "text": "If it feels slow, we can use the shorter file for live upload and the longer file for graph exploration.",
+    "parentId": "long-068",
+    "topic": "performance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-070",
+    "author": "Nikhil",
+    "timestamp": "2026-04-25T10:21:00Z",
+    "text": "That is a smart fallback. The short file proves upload, and the long file proves scale.",
+    "parentId": "long-069",
+    "topic": "performance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-071",
+    "author": "Sofia",
+    "timestamp": "2026-04-25T10:28:00Z",
+    "text": "We should keep both files available in the project root so they are easy to find.",
+    "parentId": "long-070",
+    "topic": "performance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-072",
+    "author": "Eli",
+    "timestamp": "2026-04-25T10:35:00Z",
+    "text": "I will name them clearly so we do not pick the wrong one while presenting.",
+    "parentId": "long-071",
+    "topic": "performance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-073",
+    "author": "Harper",
+    "timestamp": "2026-04-25T10:42:00Z",
+    "text": "The long file should also have enough roots to make the collapse state meaningful.",
+    "parentId": "long-072",
+    "topic": "performance",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-074",
+    "author": "Maya",
+    "timestamp": "2026-04-25T10:49:00Z",
+    "text": "Yes, multiple roots make the overview mode useful.",
+    "parentId": "long-073",
+    "topic": "performance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-075",
+    "author": "Owen",
+    "timestamp": "2026-04-25T11:00:00Z",
+    "text": "Let's assign final responsibilities so everyone knows what they are presenting.",
+    "parentId": null,
+    "topic": "team logistics",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-076",
+    "author": "Priya",
+    "timestamp": "2026-04-25T11:07:00Z",
+    "text": "I will handle upload and explain the expected JSON shape.",
+    "parentId": "long-075",
+    "topic": "team logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-077",
+    "author": "Caleb",
+    "timestamp": "2026-04-25T11:14:00Z",
+    "text": "I can present the map controls, including expand all and fullscreen.",
+    "parentId": "long-075",
+    "topic": "team logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-078",
+    "author": "Zoe",
+    "timestamp": "2026-04-25T11:21:00Z",
+    "text": "I will explain topic filtering and how it changes the visible conversation.",
+    "parentId": "long-075",
+    "topic": "team logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-079",
+    "author": "Nikhil",
+    "timestamp": "2026-04-25T11:28:00Z",
+    "text": "I can cover sentiment and the footer summary.",
+    "parentId": "long-075",
+    "topic": "team logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-080",
+    "author": "Sofia",
+    "timestamp": "2026-04-25T11:35:00Z",
+    "text": "I will close with limitations and next steps.",
+    "parentId": "long-075",
+    "topic": "team logistics",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-081",
+    "author": "Eli",
+    "timestamp": "2026-04-25T11:42:00Z",
+    "text": "I'll keep an eye on time and signal if we need to skip optional parts.",
+    "parentId": "long-075",
+    "topic": "team logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-082",
+    "author": "Harper",
+    "timestamp": "2026-04-25T11:49:00Z",
+    "text": "I will run the backend and watch the terminal during the demo.",
+    "parentId": "long-075",
+    "topic": "team logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-083",
+    "author": "Maya",
+    "timestamp": "2026-04-25T11:56:00Z",
+    "text": "Great. That splits the work evenly.",
+    "parentId": "long-082",
+    "topic": "team logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-084",
+    "author": "Owen",
+    "timestamp": "2026-04-25T12:05:00Z",
+    "text": "One last thing: let's keep the file names visible in Finder so upload is quick.",
+    "parentId": "long-083",
+    "topic": "team logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-085",
+    "author": "Priya",
+    "timestamp": "2026-04-26T09:00:00Z",
+    "text": "I did a full run with the short file. The upload step took only a few seconds.",
+    "parentId": null,
+    "topic": "final rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-086",
+    "author": "Caleb",
+    "timestamp": "2026-04-26T09:07:00Z",
+    "text": "The long file is better for showing the map, though. It has more structure.",
+    "parentId": "long-085",
+    "topic": "final rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-087",
+    "author": "Zoe",
+    "timestamp": "2026-04-26T09:14:00Z",
+    "text": "Maybe start with short upload, then select the long dataset if we want a richer map.",
+    "parentId": "long-086",
+    "topic": "final rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-088",
+    "author": "Nikhil",
+    "timestamp": "2026-04-26T09:21:00Z",
+    "text": "That is a bit of a switch, but it could work if we explain it clearly.",
+    "parentId": "long-087",
+    "topic": "final rehearsal",
+    "sentiment": "mixed"
+  },
+  {
+    "id": "long-089",
+    "author": "Sofia",
+    "timestamp": "2026-04-26T09:28:00Z",
+    "text": "I would rather upload the long file once and use it for the whole walkthrough.",
+    "parentId": "long-088",
+    "topic": "final rehearsal",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-090",
+    "author": "Eli",
+    "timestamp": "2026-04-26T09:35:00Z",
+    "text": "I agree with Sofia. One dataset keeps the story simpler.",
+    "parentId": "long-089",
+    "topic": "final rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-091",
+    "author": "Harper",
+    "timestamp": "2026-04-26T09:42:00Z",
+    "text": "Then the shorter file can be our backup if we need a faster upload.",
+    "parentId": "long-090",
+    "topic": "final rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-092",
+    "author": "Maya",
+    "timestamp": "2026-04-26T09:49:00Z",
+    "text": "Let's do that. Long file for the main showcase, short file as backup.",
+    "parentId": "long-091",
+    "topic": "final rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-093",
+    "author": "Owen",
+    "timestamp": "2026-04-26T09:56:00Z",
+    "text": "I will rehearse the opening with the long dataset selected.",
+    "parentId": "long-092",
+    "topic": "final rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-094",
+    "author": "Priya",
+    "timestamp": "2026-04-26T10:03:00Z",
+    "text": "I will make sure the upload file is available locally before class.",
+    "parentId": "long-092",
+    "topic": "final rehearsal",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-095",
+    "author": "Caleb",
+    "timestamp": "2026-04-26T10:12:00Z",
+    "text": "Final technical checklist: backend running, frontend running, dataset warmed, browser opened, projector mirrored.",
+    "parentId": null,
+    "topic": "quality assurance",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-096",
+    "author": "Zoe",
+    "timestamp": "2026-04-26T10:19:00Z",
+    "text": "Also confirm the phone can reach the frontend IP if we want to mention cross-device access.",
+    "parentId": "long-095",
+    "topic": "mobile testing",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-097",
+    "author": "Nikhil",
+    "timestamp": "2026-04-26T10:26:00Z",
+    "text": "If phone data does not load, check the API route directly before debugging the UI.",
+    "parentId": "long-096",
+    "topic": "mobile testing",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-098",
+    "author": "Sofia",
+    "timestamp": "2026-04-26T10:33:00Z",
+    "text": "Good note. The app page can load while the backend data route still fails.",
+    "parentId": "long-097",
+    "topic": "mobile testing",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-099",
+    "author": "Eli",
+    "timestamp": "2026-04-26T10:40:00Z",
+    "text": "I will keep the laptop on the same Wi-Fi as the phone to avoid network surprises.",
+    "parentId": "long-098",
+    "topic": "mobile testing",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-100",
+    "author": "Harper",
+    "timestamp": "2026-04-26T10:47:00Z",
+    "text": "The rest of the checklist looks good.",
+    "parentId": "long-095",
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-101",
+    "author": "Maya",
+    "timestamp": "2026-04-26T10:54:00Z",
+    "text": "Let's do one last pass on the actual demo sequence.",
+    "parentId": "long-100",
+    "topic": "quality assurance",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-102",
+    "author": "Owen",
+    "timestamp": "2026-04-26T11:01:00Z",
+    "text": "Sequence: upload JSON, select dataset, expand map, fullscreen map, filter by topic, show footer summary, return to chat view.",
+    "parentId": "long-101",
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-103",
+    "author": "Priya",
+    "timestamp": "2026-04-26T11:08:00Z",
+    "text": "That sequence feels complete and not too complicated.",
+    "parentId": "long-102",
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-104",
+    "author": "Caleb",
+    "timestamp": "2026-04-26T11:15:00Z",
+    "text": "We should stop after the chat view unless there are questions.",
+    "parentId": "long-103",
+    "topic": "quality assurance",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "long-105",
+    "author": "Zoe",
+    "timestamp": "2026-04-26T11:22:00Z",
+    "text": "Agreed. Ending with the chat view connects the graph back to the original messages.",
+    "parentId": "long-104",
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-106",
+    "author": "Nikhil",
+    "timestamp": "2026-04-26T11:29:00Z",
+    "text": "This should be enough to show both the technical work and the user value.",
+    "parentId": "long-105",
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-107",
+    "author": "Sofia",
+    "timestamp": "2026-04-26T11:36:00Z",
+    "text": "I feel good about it. The flow is much clearer than it was last week.",
+    "parentId": "long-106",
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-108",
+    "author": "Eli",
+    "timestamp": "2026-04-26T11:43:00Z",
+    "text": "Same. Let's freeze the demo files and avoid last-minute changes unless something breaks.",
+    "parentId": "long-107",
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-109",
+    "author": "Harper",
+    "timestamp": "2026-04-26T11:50:00Z",
+    "text": "I will keep copies of all three showcase files in the root folder.",
+    "parentId": "long-108",
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "long-110",
+    "author": "Maya",
+    "timestamp": "2026-04-26T11:58:00Z",
+    "text": "Perfect. We are ready for the showcase.",
+    "parentId": "long-109",
+    "topic": "quality assurance",
+    "sentiment": "supportive"
+  }
+]

@@ -1,0 +1,272 @@
+[
+  {
+    "id": "short-001",
+    "author": "Avery",
+    "timestamp": "2026-04-22T09:00:00Z",
+    "text": "Can we use this thread to do a quick final pass on the dashboard demo?",
+    "parentId": null,
+    "topic": "demo planning",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "short-002",
+    "author": "Mina",
+    "timestamp": "2026-04-22T09:05:00Z",
+    "text": "Yes. I think we should start with the upload flow because it is the easiest feature to understand.",
+    "parentId": "short-001",
+    "topic": "demo planning",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-003",
+    "author": "Diego",
+    "timestamp": "2026-04-22T09:11:00Z",
+    "text": "After upload, we can switch to the thread map and expand the conversation so the structure is obvious.",
+    "parentId": "short-002",
+    "topic": "thread map",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-004",
+    "author": "Noor",
+    "timestamp": "2026-04-22T09:16:00Z",
+    "text": "Let's keep the explanation short there. The visual already does a lot of the work.",
+    "parentId": "short-003",
+    "topic": "presentation",
+    "sentiment": "mixed"
+  },
+  {
+    "id": "short-005",
+    "author": "Theo",
+    "timestamp": "2026-04-22T09:22:00Z",
+    "text": "Agreed. We should show expand, collapse, then filter by one topic.",
+    "parentId": "short-004",
+    "topic": "presentation",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-006",
+    "author": "Jules",
+    "timestamp": "2026-04-22T09:30:00Z",
+    "text": "I can prepare the short narration for the topic filter section.",
+    "parentId": "short-005",
+    "topic": "presentation",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-007",
+    "author": "Rina",
+    "timestamp": "2026-04-22T09:38:00Z",
+    "text": "Should we mention the sentiment footer before or after filtering?",
+    "parentId": "short-001",
+    "topic": "sentiment",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "short-008",
+    "author": "Avery",
+    "timestamp": "2026-04-22T09:43:00Z",
+    "text": "After filtering. That way the audience sees the summary update based on visible messages.",
+    "parentId": "short-007",
+    "topic": "sentiment",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-009",
+    "author": "Mina",
+    "timestamp": "2026-04-22T09:50:00Z",
+    "text": "Good point. The footer is stronger when it reacts to something we just changed.",
+    "parentId": "short-008",
+    "topic": "sentiment",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-010",
+    "author": "Diego",
+    "timestamp": "2026-04-22T09:58:00Z",
+    "text": "We should include one critical or mixed message in the dataset so the sentiment display is not one-note.",
+    "parentId": "short-009",
+    "topic": "sentiment",
+    "sentiment": "critical"
+  },
+  {
+    "id": "short-011",
+    "author": "Noor",
+    "timestamp": "2026-04-22T10:04:00Z",
+    "text": "That is realistic. Most team conversations have a few concerns, even when the overall tone is positive.",
+    "parentId": "short-010",
+    "topic": "sentiment",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-012",
+    "author": "Theo",
+    "timestamp": "2026-04-22T10:12:00Z",
+    "text": "I tested the JSON upload with a small file. It showed up in the dataset selector right away.",
+    "parentId": null,
+    "topic": "data upload",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-013",
+    "author": "Jules",
+    "timestamp": "2026-04-22T10:18:00Z",
+    "text": "Did the parent-child links render correctly in the map?",
+    "parentId": "short-012",
+    "topic": "data upload",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "short-014",
+    "author": "Theo",
+    "timestamp": "2026-04-22T10:23:00Z",
+    "text": "Yes. The roots appeared as topic cards, and replies expanded in the right order.",
+    "parentId": "short-013",
+    "topic": "data upload",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-015",
+    "author": "Rina",
+    "timestamp": "2026-04-22T10:29:00Z",
+    "text": "Let's keep this sample file clean so nothing distracts from the upload feature.",
+    "parentId": "short-014",
+    "topic": "data upload",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-016",
+    "author": "Avery",
+    "timestamp": "2026-04-22T10:35:00Z",
+    "text": "Exactly. No missing parents, no duplicate ids, and timestamps should be in a natural order.",
+    "parentId": "short-015",
+    "topic": "data upload",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-017",
+    "author": "Mina",
+    "timestamp": "2026-04-22T10:44:00Z",
+    "text": "For the phone demo, we should load the page once on the laptop first so everything is cached.",
+    "parentId": null,
+    "topic": "showcase logistics",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "short-018",
+    "author": "Diego",
+    "timestamp": "2026-04-22T10:50:00Z",
+    "text": "That should make the classroom demo smoother, especially if the network is slow.",
+    "parentId": "short-017",
+    "topic": "showcase logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-019",
+    "author": "Noor",
+    "timestamp": "2026-04-22T10:56:00Z",
+    "text": "I will bring a backup screenshot just in case the projector connection gives us trouble.",
+    "parentId": "short-017",
+    "topic": "showcase logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-020",
+    "author": "Theo",
+    "timestamp": "2026-04-22T11:03:00Z",
+    "text": "Good idea. We probably will not need it, but it is nice to have.",
+    "parentId": "short-019",
+    "topic": "showcase logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-021",
+    "author": "Jules",
+    "timestamp": "2026-04-22T11:10:00Z",
+    "text": "Can someone confirm the final speaking order?",
+    "parentId": "short-017",
+    "topic": "showcase logistics",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "short-022",
+    "author": "Avery",
+    "timestamp": "2026-04-22T11:16:00Z",
+    "text": "I will introduce the problem, Mina can demo upload, Diego can show the map, and Noor can close with takeaways.",
+    "parentId": "short-021",
+    "topic": "showcase logistics",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-023",
+    "author": "Rina",
+    "timestamp": "2026-04-22T11:25:00Z",
+    "text": "The current map controls feel ready. Expand and fullscreen both make the demo easier to follow.",
+    "parentId": null,
+    "topic": "thread map",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-024",
+    "author": "Mina",
+    "timestamp": "2026-04-22T11:31:00Z",
+    "text": "I like that fullscreen keeps the topic selector visible. It feels much better for presenting.",
+    "parentId": "short-023",
+    "topic": "thread map",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-025",
+    "author": "Diego",
+    "timestamp": "2026-04-22T11:37:00Z",
+    "text": "The one thing to watch is graph density when every branch is expanded.",
+    "parentId": "short-024",
+    "topic": "thread map",
+    "sentiment": "mixed"
+  },
+  {
+    "id": "short-026",
+    "author": "Noor",
+    "timestamp": "2026-04-22T11:42:00Z",
+    "text": "We can solve that by expanding all briefly, then collapsing and opening one branch.",
+    "parentId": "short-025",
+    "topic": "thread map",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-027",
+    "author": "Theo",
+    "timestamp": "2026-04-22T11:49:00Z",
+    "text": "That gives the audience both the overview and the detail view.",
+    "parentId": "short-026",
+    "topic": "thread map",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-028",
+    "author": "Jules",
+    "timestamp": "2026-04-22T11:57:00Z",
+    "text": "I think we are ready. The flow now feels simple enough for a quick showcase.",
+    "parentId": "short-027",
+    "topic": "demo planning",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-029",
+    "author": "Avery",
+    "timestamp": "2026-04-22T12:05:00Z",
+    "text": "Great. Let's rehearse once with the short file and once with the larger file.",
+    "parentId": "short-028",
+    "topic": "demo planning",
+    "sentiment": "supportive"
+  },
+  {
+    "id": "short-030",
+    "author": "Rina",
+    "timestamp": "2026-04-22T12:12:00Z",
+    "text": "Sounds good. I will time each section so we do not run over.",
+    "parentId": "short-029",
+    "topic": "demo planning",
+    "sentiment": "supportive"
+  }
+]
