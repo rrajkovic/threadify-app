@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Discussion Thread Frontend
 
-## Getting Started
+Next.js frontend for exploring discussion datasets served by the FastAPI
+backend. The app provides a polished thread-map interface plus a prototype
+analytics dashboard.
 
-First, run the development server:
+## Requirements
+
+- Node.js and npm
+- Backend running at `http://localhost:8000` by default
+
+## Setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000/user` for the main interface.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The prototype dashboard is available at `http://localhost:3000`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment
 
-## Learn More
+The frontend proxies backend calls through route handlers in `app/api`. Defaults
+point to `http://localhost:8000`.
 
-To learn more about Next.js, take a look at the following resources:
+For a different backend URL, create or edit `.env.local`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+BACKEND_API_BASE_URL=http://localhost:8000
+BACKEND_URL=http://localhost:8000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`BACKEND_API_BASE_URL` is used by dataset and raw message proxy routes.
+`BACKEND_URL` is used by the annotated message and AI summary proxy routes.
 
-## Deploy on Vercel
+## Available Routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `/user` - main Thread Map interface with map/chat modes, topic filters, time
+  controls, upload, fullscreen map, detail sheets, and AI summaries
+- `/` - prototype dashboard with chat view, message graph, topic graph, and
+  sentiment/topic summaries
+- `/test` - experimental variant of the user interface
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Backend Proxy Routes
+
+| Frontend route | Backend route |
+| --- | --- |
+| `GET /api/datasets` | `GET /datasets` |
+| `POST /api/datasets/upload` | `POST /datasets/upload` |
+| `GET /api/discussions/{datasetId}/messages` | `GET /discussions/{dataset_id}/messages` |
+| `GET /api/discussions/{datasetId}/messages/annotated` | `GET /discussions/{dataset_id}/messages/annotated` |
+| `GET /api/discussions/{datasetId}/messages/ai-summary` | `GET /discussions/{dataset_id}/ai-summary` |
+
+## Scripts
+
+```bash
+npm run dev    # Start local development server
+npm run build  # Build for production
+npm run start  # Start production server after build
+npm run lint   # Run ESLint
+```
+
+## Main Packages
+
+- Next.js 16 and React 19
+- TypeScript
+- Tailwind CSS 4
+- `@xyflow/react` for the map canvas
+- `dagre` and `elkjs` for graph layout support
+- `lucide-react` for icons
+- `motion` for interaction animation

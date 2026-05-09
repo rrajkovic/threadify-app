@@ -1,57 +1,63 @@
-# CIS-5120 Final Project: Discussion Thread Analysis Platform
+# Discussion Thread Analysis Platform
 
-A full-stack application for analyzing threaded discussions with AI-powered annotation and summarization capabilities.
+A full-stack project for loading, analyzing, and visualizing threaded discussion
+datasets. The backend exposes a FastAPI API for dataset loading, thread parsing,
+AI-assisted topic/sentiment annotation, summary generation, and in-memory uploads.
+The frontend is a Next.js application with map and chat views for exploring those
+threads.
 
-## 📦 Project Structure
+## Project Structure
 
+```text
+.
+|-- backend/
+|   |-- app/
+|   |   |-- main.py        # FastAPI app and routes
+|   |   |-- loader.py      # JSON dataset loading and validation
+|   |   |-- parser.py      # Parent/child thread tree construction
+|   |   |-- schemas.py     # Pydantic response models
+|   |   `-- ai_service.py  # OpenAI annotation, summaries, and SQLite cache
+|   |-- data/              # Built-in JSON datasets
+|   |-- requirements.txt
+|   |-- run.sh
+|   `-- README.md
+|-- frontend/
+|   |-- app/
+|   |   |-- api/           # Next.js proxy routes to the backend
+|   |   |-- components/    # Thread map, chat, filters, and detail sheets
+|   |   |-- page.tsx       # Prototype analytics dashboard
+|   |   `-- user/page.tsx  # Main polished thread-map interface
+|   |-- package.json
+|   `-- README.md
+`-- run-dev.sh             # macOS helper that opens backend and frontend terminals
 ```
-CIS-5120-final-project/
-├── backend/              ← AI-powered discussion analysis API
-│   ├── README.md        # ⭐ Start here for backend docs
-│   ├── AI_SETUP.md
-│   ├── TEST_RESULTS.md
-│   ├── requirements.txt
-│   ├── .env.example
-│   └── app/
-│       ├── main.py
-│       ├── ai_service.py    # ⭐ AI features (Copilot-generated)
-│       ├── loader.py
-│       ├── parser.py
-│       └── schemas.py
-│
-└── frontend/            ← Next.js web interface
-    ├── README.md
-    ├── package.json
-    ├── app/
-    └── ...
-```
 
-## 🚀 Quick Start
+## Quick Start
 
-### Backend (AI-Powered API)
+### Backend
 
 ```bash
 cd backend
-pip install -r requirements.txt
-python -m uvicorn app.main:app --reload
+python3 -m venv venv
+source venv/bin/activate
+python -m pip install -r requirements.txt
+bash run.sh
 ```
 
-API available at: **http://localhost:8000**  
-Interactive docs: **http://localhost:8000/docs**
+The API runs at `http://localhost:8000`.
 
-#### With AI Features (Optional)
+Interactive API docs are available at `http://localhost:8000/docs`.
+
+Optional AI features use an OpenAI API key. Create `backend/.env` and add:
+
 ```bash
-# Set up OpenAI API
-cp .env.example .env
-# Edit .env and add your OpenAI API key
-
-# Restart backend
-python -m uvicorn app.main:app --reload
+OPENAI_API_KEY=sk-your-key-here
 ```
 
-**See `backend/README.md` for complete backend documentation.**
+Without an API key, the API still runs. Annotation fields may fall back to
+`unknown`, and summaries use fallback text when live generation is unavailable.
 
-### Frontend (Web UI)
+### Frontend
 
 ```bash
 cd frontend
@@ -59,163 +65,70 @@ npm install
 npm run dev
 ```
 
-UI available at: **http://localhost:3000**
+Open `http://localhost:3000/user` for the main thread-map UI.
 
----
+The development dashboard is available at `http://localhost:3000`.
 
-## ✨ Key Features
+If the backend is not on `http://localhost:8000`, set these in
+`frontend/.env.local`:
 
-### Backend
-- ✅ **REST API** for discussion data management
-- ✅ **Message Validation** with JSON schema enforcement
-- ✅ **Thread Parsing** - Build hierarchical discussion trees
-- ✅ **AI Annotation** - Auto-generate topic/sentiment labels
-- ✅ **AI Summarization** - Generate thread summaries
-- ✅ **Graceful Fallback** - Works with or without API key
-- ✅ **CORS Support** - Ready for frontend integration
-
-### Frontend
-- 🎨 React 19 + Next.js 16
-- 📊 Discussion thread visualization
-- 🌳 Tree/graph layout with @xyflow/react
-- 📝 Interactive message exploration
-
----
-
-## 📡 API Overview
-
-### Core Endpoints
-
-| Method | Endpoint | Purpose |
-|--------|----------|---------|
-| `GET` | `/` | Health check |
-| `GET` | `/datasets` | List available datasets |
-| `GET` | `/discussions/{id}/messages` | Flat message list |
-| `GET` | `/discussions/{id}/thread` | Hierarchical threads |
-| `GET` | `/discussions/{id}/messages/annotated` | ⭐ AI-annotated messages |
-| `GET` | `/discussions/{id}/ai-summary` | ⭐ AI-generated summaries |
-
-**See `backend/README.md` for complete API documentation with examples.**
-
----
-
-## 🤖 AI Features (NEW!)
-
-### Message Annotation
-Automatically classify each message with:
-- **Topic**: deadline, grading, meeting, participation, logistics, other
-- **Sentiment**: supportive, critical, mixed, neutral
-
-### Thread Summarization
-Generate concise summaries of entire discussion threads with:
-- Main topic inference
-- Summary paragraph
-- Key discussion points
-
-### Smart Caching
-- In-memory caching to avoid repeated API calls
-- Graceful fallback when API unavailable
-
-**See `backend/AI_SETUP.md` for detailed AI setup instructions.**
-
----
-
-## 🧪 Testing
-
-### Backend Tests
 ```bash
-cd backend
-./test_ai_comprehensive.sh
+BACKEND_API_BASE_URL=http://localhost:8000
+BACKEND_URL=http://localhost:8000
 ```
 
-**See `backend/TEST_RESULTS.md` for test results.**
+### Start Both Apps on macOS
 
----
+```bash
+./run-dev.sh
+```
 
-## 🛠️ Technology Stack
+This helper starts the backend from `backend/venv` and the frontend in separate
+Terminal windows.
 
-### Backend
-- **FastAPI 0.115.12** - Modern async Python web framework
-- **Pydantic 2.11.3** - Data validation
-- **OpenAI 1.63.0** - AI API (optional)
-- **python-dotenv** - Environment config
+## Current Features
 
-### Frontend
-- **Next.js 16.2** - React framework
-- **React 19** - UI library
-- **@xyflow/react 12** - Graph visualization
-- **Tailwind CSS 4** - Styling
+- Built-in datasets loaded from `backend/data/*.json`
+- Custom JSON dataset upload through `POST /datasets/upload`
+- Flat message list and hierarchical thread tree endpoints
+- AI-assisted topic and sentiment annotation
+- AI-assisted thread summaries and key points
+- AI-inferred reply links for messages that look like contextual replies
+- SQLite-backed AI cache in `backend/.cache/ai_cache.sqlite3`
+- Background warmup for built-in datasets when the backend starts
+- Next.js proxy routes so the browser can call the backend through the frontend
+- Main UI with map/chat modes, dataset selection, JSON upload, topic filters,
+  time grouping, fullscreen map view, message detail sheets, and summary footer
 
----
+## API Overview
 
-## 📝 Code Attribution
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `GET` | `/` | Health check |
+| `GET` | `/datasets` | List built-in and uploaded datasets |
+| `POST` | `/datasets/upload` | Upload an in-memory dataset |
+| `GET` | `/discussions/{dataset_id}/messages` | Return validated messages |
+| `GET` | `/discussions/{dataset_id}/thread` | Return root threads, orphans, and stats |
+| `GET` | `/discussions/{dataset_id}/messages/annotated` | Return AI-enriched messages |
+| `GET` | `/discussions/{dataset_id}/ai-summary` | Return summaries for root threads |
 
-### AI-Generated Components
-This project leverages **GitHub Copilot** for code generation:
+Frontend proxy routes mirror the backend under `frontend/app/api`, including
+`/api/datasets`, `/api/datasets/upload`,
+`/api/discussions/{datasetId}/messages`,
+`/api/discussions/{datasetId}/messages/annotated`, and
+`/api/discussions/{datasetId}/messages/ai-summary`.
 
-**Backend AI Service** (`backend/app/ai_service.py`):
-- ✨ LLM integration with OpenAI API
-- ✨ Message annotation logic
-- ✨ Thread summarization
-- ✨ Caching and fallback handling
-- ✨ Comprehensive error handling
+## Data Format
 
-**New Endpoints** (`backend/app/main.py`):
-- ✨ `/messages/annotated` endpoint
-- ✨ `/ai-summary` endpoint
-
-**Test & Documentation**:
-- ✨ Comprehensive test scripts
-- ✨ Setup guides (`AI_SETUP.md`)
-- ✨ Test results documentation
-
-### Human-Created Components
-Original modules:
-- 👤 `backend/app/loader.py` - Data loading
-- 👤 `backend/app/parser.py` - Thread parsing
-- 👤 `backend/app/schemas.py` - Data models
-- 👤 Frontend application structure
-
-### Development Process
-- **IDE**: VS Code with GitHub Copilot
-- **AI Assistant**: GitHub Copilot (GPT-4o-mini)
-- **Development Approach**: Iterative prompting with human oversight
-
----
-
-## 📖 Documentation
-
-### For Backend Development
-1. **Getting Started**: `backend/README.md`
-2. **AI Setup**: `backend/AI_SETUP.md`
-3. **Testing**: `backend/TEST_RESULTS.md`
-4. **Interactive API Docs**: http://localhost:8000/docs
-
-### For Frontend Development
-See `frontend/README.md`
-
----
-
-## 🔐 Security Notes
-
-- API keys in `.env` are never committed (`.gitignore`)
-- Only `.env.example` is in the repo
-- CORS configured for localhost:3000
-- Input validation on all API endpoints
-
----
-
-## 📊 Data Format
-
-Datasets are JSON arrays in `backend/data/`:
+Datasets are JSON arrays of message objects:
 
 ```json
 [
   {
     "id": "m1",
     "author": "Alice",
-    "timestamp": "2024-01-15T10:30:00Z",
-    "text": "Discussion topic...",
+    "timestamp": "2026-03-01T09:00:00Z",
+    "text": "Should we extend the deadline?",
     "parentId": null,
     "topic": "deadline",
     "sentiment": "neutral"
@@ -223,34 +136,56 @@ Datasets are JSON arrays in `backend/data/`:
 ]
 ```
 
-See `backend/README.md` for full schema documentation.
+Required fields are `id`, `author`, `timestamp`, and `text`.
 
----
+Optional fields are `parentId`, `topic`, and `sentiment`. The annotated endpoint
+can also return `inferredReplyToId` and `replyInferred` for AI-inferred links.
 
-## 💡 Next Steps
+## Built-In Datasets
 
-1. **Backend**: Add your OpenAI API key to `backend/.env`
-2. **Test**: Run `backend/test_ai_comprehensive.sh`
-3. **Frontend**: Connect UI to backend endpoints
-4. **Deploy**: Consider production deployment options
+The backend currently includes:
 
----
+- `course_content` - 9 messages
+- `course_difficulty` - 9 messages
+- `discussion_demo` - 8 messages
+- `large_discussion_test_dataset` - 431 messages
+- `project_qa` - 9 messages
+- `resources` - 9 messages
+- `test_upload` - 9 messages
 
-## 📞 Support
+The repository root also contains additional standalone JSON discussion samples
+that can be uploaded through the frontend.
 
-- **Backend Issues**: See `backend/README.md` and `backend/AI_SETUP.md`
-- **API Documentation**: http://localhost:8000/docs (when running)
-- **Test Verification**: See `backend/TEST_RESULTS.md`
+## Testing
 
----
+Backend endpoint scripts require the backend to be running and `jq` to be
+installed:
 
-## 📄 Project Info
+```bash
+cd backend
+./test_ai_endpoints.sh
+./test_ai_comprehensive.sh
+```
 
-- **Course**: CIS 5120 (University of Pennsylvania)
-- **Type**: Final Project
-- **Status**: ✅ MVP Complete with AI Features
-- **Last Updated**: April 2026
+Frontend checks:
 
----
+```bash
+cd frontend
+npm run lint
+npm run build
+```
 
-**Ready to analyze discussions with AI? Start with `backend/README.md`! 🚀**
+## Tech Stack
+
+- Backend: FastAPI, Uvicorn, Pydantic, python-dateutil, OpenAI SDK,
+  python-dotenv, SQLite
+- Frontend: Next.js 16, React 19, TypeScript, Tailwind CSS 4, React Flow,
+  dagre, elkjs, lucide-react, Motion
+
+## Notes
+
+- `.env`, `.env.local`, virtual environments, `node_modules`, `.next`, and AI
+  cache files are ignored by git.
+- Uploaded datasets are stored in backend memory and disappear when the backend
+  restarts.
+- `backend/Dockerfile` is currently empty; run the backend locally with `run.sh`.
